@@ -1,23 +1,32 @@
-<!-- Fix math -->
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<style>
-  /* This ensures your math blocks don't get flipped awkwardly by the Hebrew RTL layout */
-  .mjx-chtml { direction: ltr !important; display: inline-block; }
-  mjx-container[display="true"] { direction: ltr !important; }
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<!-- Fix RTL -->
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <style>
-  /* Force the whole page to be Right-to-Left for Hebrew */
-  body {
-    direction: rtl;
-    text-align: right;
+  /* Target the body AND the specific layout containers Jekyll uses */
+  body, .container-lg, .markdown-body, main, #content {
+    direction: rtl !important;
+    text-align: right !important;
   }
 
-  /* Keep Math blocks Left-to-Right so equations don't reverse */
-  .mjx-chtml, mjx-container {
+  /* Keep lists (bullet points) bulleting on the right side */
+  ul, ol {
+    padding-right: 20px !important;
+    padding-left: 0 !important;
+  }
+
+  /* CRITICAL: Force MathJax containers to stay Left-to-Right */
+  mjx-container, .mjx-chtml, .MathJax {
     direction: ltr !important;
-    text-align: left;
-    display: inline-block;
+    text-align: left !important;
+    display: inline-block !important;
+  }
+
+  /* Center standalone display equations */
+  mjx-container[display="true"] {
+    direction: ltr !important;
+    text-align: center !important;
+    display: block !important;
+    margin: 1em auto !important;
   }
 </style>
