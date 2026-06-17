@@ -2,9 +2,9 @@
 layout: default
 ---
 
-# פרוייקט הספרייה
+# פרוייקט הספרייה של 👖
 
 שלום לכם! כאן אני אכתוב סיכומים ודברים שמעניינים אותי במתמטיקה, מדעי המחשב ופיזיקה.
-אתר בתחזוקה (כרגע)
+אתר בתחזוקה (כרגע).
 
-$$ \forall \varepsilon > 0 \exists N_0 \in \mathbb{N} \forall n > N_0 : |a_n - L| < \varepsilon$$
+**ניסון:** [לחצו כאן](https://machness42.github.io/library.github.io/cs/algorithms/intro)
