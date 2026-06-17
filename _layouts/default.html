@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/21.0.0/primer.css">
+  <style>
+    body, .markdown-body {
+      direction: rtl !important;
+      text-align: right !important;
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    ul, ol { padding-right: 25px !important; padding-left: 0 !important; }
+    mjx-container, .mjx-chtml { direction: ltr !important; text-align: left !important; display: inline-block !important; }
+    mjx-container[display="true"] { direction: ltr !important; text-align: center !important; display: block !important; }
+  </style>
+</head>
+<body>
+  <div class="markdown-body">
+    {{ content }}
+  </div>
+</body>
+</html>
