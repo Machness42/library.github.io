@@ -38,10 +38,27 @@ $$
 
 המשמעות של $\Theta$ היא של "שווה (בערך)" אסימפטוטית נוכיח בהמשך כי גם מדובר במחלקת שקילות.
 
-השלושה לעיל הם החשובים ביותר. בנוסף נזכיר עוד שני סימונים חשובים:
+השלושה לעיל הם החשובים ביותר. בנוסף נזכיר עוד שני סימונים בהם משתמשים לעיתים:
 
 **סימון $o$** הינו:
 
 $$
-	o(f(n)) := \{\forall c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall N_0 < n \in \mathbb{N}: \space g(n) \le c \cdot f(n) \}
+	o(f(n)) := \{g(n) : \mathbb{N} \to \RP |\forall c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall N_0 < n \in \mathbb{N}: \space g(n) \le c \cdot f(n) \}
 $$
+
+כאשר המשמעות היא של "קטן ממש" (אסימפטוטית) או קטן יותר מבחינת סדר הגודל.
+
+**סימון $\omega$** הינו:
+
+$$
+\omega(f(n)) := \{ g:\mathbb{N} \to \RP | \forall c\in \RP \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space \forall N_0 < n \in \mathbb{N}: c\cdot f(n) \le g(n) \}
+$$
+
+ומייצג "גדול ממש" (אסימפטוטית) או גדול יותר מבחינת סדר הגודל.
+
+לסיכום, הנה טבלה המרכזת את כל המשמעויות של הסימונים:
+
+| $O$   | $\Omega$ | $\Theta$  | $o$ | $\omega$ |
+| ----- | -------- | --------- | --- | -------- |
+| $\le$ | $\ge$    | $\approx$ | $<$ | $>$      |
+

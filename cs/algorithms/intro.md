@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
+הפרק הקודם: [תוכן עניינים](https://machness42.github.io/library/cs/algorithms/toc)
 
+---
 # מבוא
 
 **קריאה מומלצת לפני**: מושגים בסיסיים מתורת הקבוצות.
