@@ -7,6 +7,5 @@ layout: default
 שלום לכם! כאן אני אכתוב סיכומים ודברים שמעניינים אותי במתמטיקה, מדעי המחשב ופיזיקה.
 אתר בתחזוקה (כרגע).
 
-**ניסון:** [לחצו כאן](https://machness42.github.io/library/cs/algorithms/intro)
-
-<!-- bla bla -->
+- מדעי המחשב
+	- [אלגוריתמים](https://machness42.github.io/library/cs/algorithms/toc) (בהקמה)
