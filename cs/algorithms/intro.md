@@ -36,4 +36,4 @@ layout: default
 על אף הפרדוקסליות שבדבר, אנחנו לא מגדירים באופן פורמלי מהי בעיה, מהו אלגוריתם ומהו פתרון. את הדברים הללו עושים בקורסים העוסקים במודלים חישוביים ובתורת החישוביות והסיבוכיות, שהם ההכללה המתמטית למושג החישוב והמחשב.
 
 ---
-הפרק הבא: [1.1 סימונים אסימפטוטיים](https://machness42.github.io/library/cs/algorithms/analysis/Asympt)
+הפרק הבא: [1.1 סימונים אסימפטוטיים](https://machness42.github.io/library/cs/algorithms/analysis/Asymptotic Notations)
