@@ -15,7 +15,7 @@ layout: default
 **הגדרות.**  תהי $f:\mathbb{N}\to\mathbb{R}_+$ פונקציה. מגדירים את **סימון $O$** (notation-$O$) להיות:
 
 $$
-O(f(n)):=\{ g(n):\mathbb{N}\to\mathbb{R}_+|\exists c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall N_0 < n \in \mathbb{N}: \space g(n) \le c \cdot f(n) \}
+O(f(n)):=\{ g(n):\mathbb{N}\to\mathbb{R}_+|\exists c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall n > N_0: \space g(n) \le c \cdot f(n) \}
 $$
 
 או בעברית שפת הקודש, קבוצת כל הפונקציות שהחל משלב מסויים קטנות או שוות לקבוע כפול $f$. לרוב מדעני מחשב לא משתמשים במינוח של $g(n) \in O(f(n))$ אלא כותבים $g(n) = O(f(n))$.
@@ -25,7 +25,7 @@ $$
 כמו"כ, מגדירים את **סימון $\Omega$** להיות:
 
 $$
-\Omega(f(n)) := \{ g(n):\mathbb{N}\to\mathbb{R}_+|\exists c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall N_0 < n \in \mathbb{N}: c\cdot f(n) \le g(n)\}
+\Omega(f(n)) := \{ g(n):\mathbb{N}\to\mathbb{R}_+|\exists c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall n > N_0: \space c\cdot f(n) \le g(n)\}
 $$
 
 הסימון $\Omega$ משמעו "גדול או שווה" אסימפטוטית. במדעי המחשב קשה משמעותית הרבה יותר להראות חסם תחתון על אלגוריתמים ($\Omega$) שאינם טריוויאלים מפאת גודל הקלט.
@@ -33,7 +33,7 @@ $$
 **סימון $\Theta$** הינו:
 
 $$
-\Theta(f(n)):=\{ g(n):\mathbb{N}\to\mathbb{R}_+|\exists c_1, c_2 \in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall N_0 < n \in \mathbb{N}: \space c_1 \cdot f(n) \le g(n) \le c_2 \cdot f(n) \}
+\Theta(f(n)):=\{ g(n):\mathbb{N}\to\mathbb{R}_+|\exists c_1, c_2 \in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall n > N_0: \space c_1 \cdot f(n) \le g(n) \le c_2 \cdot f(n) \}
 $$
 
 המשמעות של $\Theta$ היא של "שווה (בערך)" אסימפטוטית נוכיח בהמשך כי גם מדובר במחלקת שקילות.
@@ -43,7 +43,7 @@ $$
 **סימון $o$** הינו:
 
 $$
-	o(f(n)) := \{g(n) : \mathbb{N} \to \mathbb{R}_+ |\forall c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall N_0 < n \in \mathbb{N}: \space g(n) \le c \cdot f(n) \}
+	o(f(n)) := \{g(n) : \mathbb{N} \to \mathbb{R}_+ |\forall c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space\forall n > N_0: \space g(n) \le c \cdot f(n) \}
 $$
 
 כאשר המשמעות היא של "קטן ממש" (אסימפטוטית) או קטן יותר מבחינת סדר הגודל.
@@ -51,14 +51,50 @@ $$
 **סימון $\omega$** הינו:
 
 $$
-\omega(f(n)) := \{ g:\mathbb{N} \to \mathbb{R}_+ | \forall c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space \forall N_0 < n \in \mathbb{N}: c\cdot f(n) \le g(n) \}
+\omega(f(n)) := \{ g(n):\mathbb{N} \to \mathbb{R}_+ | \forall c\in \mathbb{R}_+ \space \exists N_0 \in \mathbb{N} \space \text{ s.t. } \space \forall n > N_0: \space c\cdot f(n) \le g(n) \}
 $$
 
 ומייצג "גדול ממש" (אסימפטוטית) או גדול יותר מבחינת סדר הגודל.
 
 לסיכום, הנה טבלה המרכזת את כל המשמעויות של הסימונים:
 
-| $O$   | $\Omega$ | $\Theta$  | $o$ | $\omega$ |
-| ----- | -------- | --------- | --- | -------- |
-| $\le$ | $\ge$    | $\approx$ | $<$ | $>$      |
+| $$g(n) \in O(f(n))$$                                          | $$g(n) \in \Omega(f(n))$$                                     | $$g(n) \in \Theta(f(n))$$                                         | $$g(n) \in o(f(n))$$                                        | $$f(n) \in \omega(g(n))$$                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| $$g(n) \space \space \text{"}\le\text{"} \space \space f(n)$$ | $$g(n) \space \space \text{"}\ge\text{"} \space \space f(n)$$ | $$g(n) \space \space \text{"}\approx\text{"} \space \space f(n)$$ | $$g(n) \space \space \text{"}<\text{"} \space \space f(n)$$ | $$g(n) \space \space \text{"}>\text{"} \space \space f(n)$$ |
 
+בואו ננסה להבין את ההגדרה עם דוגמה.
+**תרגיל.** הוכיחו כי $2n^2+3 = O(n^2)$
+**פתרון.** עלינו למצוא קבוע $c$ ושלב  $N_0$ כך שלכל $n>N_0$ (טבעי כמובן) נקבל:
+
+$$
+2n^2 + 3 \le c\cdot n^2
+$$
+
+נעביר אגף:
+$$
+3 \le (c-2)n^2
+$$
+כלומר אנחנו צריכים ש $c > 2$ אחרת אף פעם לא נקבל פסוק אמת. לפיכך אם נבחר $c=3$ אז נרצה ש
+$$
+3 \le n^2
+$$
+ולכן אם נבחר $N_0=2$ נקבל כמבוקש. משל $\blacksquare$ .
+
+**טענה.** היחס $fRg \iff g(n) \in \Theta (f(n))$ הוא יחס שקילות על אוסף הפונקציות מ $\mathbb{N}$ ל $\mathbb{R}_+$.
+**הוכחה.** נוכיח את כל התכונות של יחס שקילות.
+
+- רפלקסיביות: צ"ל ש $f(n) \in \Theta (f(n))$. לפיכך, נבחין כי אם נבחר $c_1 = c_2 = 1$ וכן $N_0 =1$ נקבל שלכל $n>1$:
+$$
+f(n) \le f(n) \le f(n)
+$$
+- סימטריות: נניח ש $g(n)\in \Theta(f(n))$. עלינו להוכיח כי $f(n)\in \Theta(g(n))$. עלינו למצוא $c_1 ,c_2 \in \mathbb{R}_+$ וכן $N_0 \in \mathbb{N}$ כך שלכל $n>N_0$ מתקיים כי:
+$$
+c_1 \cdot f(n) \le g(n) \le c_2 \cdot f(n)
+$$
+	כעת נתון שקיימים $c_1',c_2' \in \mathbb{R}_+$ וכן $N_0' \in \mathbb{N}$ כך שלכל $n>N_0$ מתקיים:
+$$
+c_1 \cdot g(n) \le f(n) \le c_2 \cdot g(n)
+$$
+	נבחר $N_0 = N_0'$ וכן $c_2 =\frac{1}{c_1'},\space c_1 = \frac{1}{c_2'}$  ואכן נקבל כמבוקש (מחלקים את שני האגפים בקבוע ומקבלים שהחסם התחתון של $f$ הינו חסם עליון על $g$, וכן להיפך).
+
+- טרנזיטיביות: תהיינה $f,g,h:\mathbb{N} \to \mathbb{R}_+$ כך ש $f(n)\in \Theta(g(n))$ וכן $g(n)\in \Theta(h(n))$. נוכיח כי $f(n) \in \Theta(h(n))$.

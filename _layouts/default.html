@@ -29,6 +29,25 @@
     ul, ol { padding-right: 25px !important; padding-left: 0 !important; }
     mjx-container, .mjx-chtml { direction: ltr !important; text-align: left !important; display: inline-block !important; }
     mjx-container[display="true"] { direction: ltr !important; text-align: center !important; display: block !important; }
+
+    /* Centered RTL Tables styling */
+    .markdown-body table {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      direction: rtl !important;
+      text-align: right !important;
+      width: max-content !important;
+    }
+    
+    .markdown-body th, .markdown-body td {
+      border: 1px solid #d0d7de !important;
+      padding: 10px 14px !important;
+    }
+    
+    .markdown-body th {
+      background-color: #f6f8fa !important;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
