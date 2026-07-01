@@ -1,0 +1,88 @@
+\documentclass[tikz,border=2mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{trees,arrows.meta,positioning}
+\usepackage{hyperref}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    node distance=2cm,
+    level distance=1.65cm,
+    level 1/.style={sibling distance=5.6cm},
+    level 2/.style={sibling distance=2.8cm},
+    level 3/.style={sibling distance=1.4cm},
+    edge from parent/.style={draw=gray, thick, -{Stealth[length=2.5mm]}},
+    every node/.style={font=\sffamily},
+    recursion node/.style={
+        circle,
+        draw=blue!70!black,
+        fill=blue!10,
+        thick,
+        minimum size=1.15cm,
+        align=center
+    },
+    leaf node/.style={
+        circle,
+        draw=green!50!black,
+        fill=green!12,
+        thick,
+        minimum size=1.05cm,
+        align=center
+    },
+    dots node/.style={
+        draw=none,
+        fill=none,
+        font=\Large\sffamily,
+        minimum size=0.5cm
+    }
+]
+
+\node[recursion node] (root) {$f(n)$}
+    child { node[recursion node] (leftn1) {$f(n-1)$}
+        child { node[recursion node] (leftn2a) {$f(n-2)$}
+            child { node[dots node] {$\vdots$}
+                child { node[leaf node] {$1$} }
+                child { node[leaf node] {$1$} }
+            }
+            child { node[dots node] {$\vdots$}
+                child { node[leaf node] {$1$} }
+                child { node[leaf node] {$1$} }
+            }
+        }
+        child { node[recursion node] (leftn2b) {$f(n-2)$}
+            child { node[dots node] {$\vdots$}
+                child { node[leaf node] {$1$} }
+                child { node[leaf node] {$1$} }
+            }
+            child { node[dots node] {$\vdots$}
+                child { node[leaf node] {$1$} }
+                child { node[leaf node] {$1$} }
+            }
+        }
+    }
+    child { node[recursion node] (rightn1) {$f(n-1)$}
+        child { node[recursion node] (rightn2a) {$f(n-2)$}
+            child { node[dots node] {$\vdots$}
+                child { node[leaf node] {$1$} }
+                child { node[leaf node] {$1$} }
+            }
+            child { node[dots node] {$\vdots$}
+                child { node[leaf node] {$1$} }
+                child { node[leaf node] {$1$} }
+            }
+        }
+        child { node[recursion node] (rightn2b) {$f(n-2)$}
+            child { node[dots node] {$\vdots$}
+                child { node[leaf node] {$1$} }
+                child { node[leaf node] {$1$} }
+            }
+            child { node[dots node] {$\vdots$}
+                child { node[leaf node] {$1$} }
+                child { node[leaf node] {$1$} }
+            }
+        }
+    };
+\end{tikzpicture}
+
+\end{document}

@@ -1,1 +1,11 @@
 .obsidian/
+
+# discard latex files
+*.log
+*.pdf
+*.gz
+*.out
+*.aux
+*.bbl
+*.blg
+*.aux

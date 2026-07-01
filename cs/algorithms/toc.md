@@ -7,4 +7,5 @@
 
 1. ניתוח אלגוריתמים
 	1. [סימונים אסימפטוטים](https://machness42.github.io/library/cs/algorithms/analysis/Asymptotic Notations)
+	2. [רקורסיות ונוסחאות נסיגה](https://machness42.github.io/library/cs/algorithms/analysis/Recursions)
 
